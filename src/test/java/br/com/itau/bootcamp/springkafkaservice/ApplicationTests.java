@@ -17,14 +17,6 @@ class ApplicationTests extends AbstractIntegrationTest {
   @Autowired
   TestRestTemplate restTemplate;
 
-  @Autowired
-  MessageRepository messageRepository;
-
-  @BeforeEach
-  void beforeEach() {
-    this.messageRepository.deleteAll();
-  }
-
   @Test
   public void testPublishAndConsumerMessage_storeDB() throws InterruptedException {
     //when
