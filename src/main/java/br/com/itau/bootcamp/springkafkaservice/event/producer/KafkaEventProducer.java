@@ -28,6 +28,5 @@ public class KafkaEventProducer {
         .build();
 
     this.kafkaTemplate.send("spring.topic", myKafkaMessage.getId(), myKafkaMessage);
-    this.kafkaTemplate.flush();
   }
 }

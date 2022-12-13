@@ -30,7 +30,7 @@ public class MessageController {
   }
 
   @GetMapping
-  List<MessageDTO> postMessage() {
+  List<MessageDTO> retrieveMessages() {
     return this.service.getMessages().stream()
         .map(message ->
             new MessageDTO(message.getUuid(), message.getMessage(), message.getCreatedAt()))
