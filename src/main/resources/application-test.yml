@@ -1,16 +1,16 @@
 spring:
   datasource:
-    url: jdbc:tc:postgresql:13.4-buster:///kafkadbtest
-    username: test
-    password: test
-    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    url: ${DB_URL}
+    username: ${DB_USERNAME:test}
+    password: ${DB_PASSWORD:test}
+    driver-class-name: ${DB_DRIVER_CLASS:org.postgresql.Driver}
   jpa:
     hibernate:
       ddl-auto: create-drop
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
-      auto-offset-reset: earliest
+      auto-offset-reset: earliest #make consumer always start from the first message for tests
 
 logging:
   level:
